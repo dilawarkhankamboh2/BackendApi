@@ -1,0 +1,25 @@
+{
+  "name": "backendapi",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon ./dist/server.js"
+  },
+  "keywords": [],
+  "author": "Dilawar khan kamboh",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.2",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.5",
+    "@types/express": "^4.17.21",
+    "@types/typescript": "^2.0.0"
+  }
+}
