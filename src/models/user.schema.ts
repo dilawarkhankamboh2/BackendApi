@@ -23,6 +23,12 @@ const userSchema = new mongoose.Schema(
       required: [true, "photo is required"],
     },
 
+    gender: {
+      type: String,
+      enum: ["male", "female"],
+      required: true,
+    },
+
     role: {
       type: String,
       required: true,
