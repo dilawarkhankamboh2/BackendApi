@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
+import { AuthType} from "../../types/authType";
 
 // auth schema
-const authSchema = new mongoose.Schema(
+const authSchema = new mongoose.Schema<AuthType>(
   {
     _id: {
       type: String,
@@ -63,4 +64,4 @@ authSchema.set("toJSON", { virtuals: true });
 authSchema.set("toObject", { virtuals: true });
 
 // user model
-export const User = mongoose.model("User", authSchema);
+export const User = mongoose.model<AuthType>("User", authSchema);
