@@ -18,4 +18,4 @@ const login= tryCatch(async(req, res, next)=>{
 
 
 // export all functions
-export {register};
+export {register, login};

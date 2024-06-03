@@ -2,7 +2,7 @@ import { app } from "./app";
 import { config } from "./config/config";
 
 // server
-(async () => {
+;(async () => {
   // port
   const PORT = config.PORT;
 
