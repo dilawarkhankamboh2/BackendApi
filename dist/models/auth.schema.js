@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
-// user schema
-const userSchema = new mongoose_1.default.Schema({
+// auth schema
+const authSchema = new mongoose_1.default.Schema({
     _id: {
         type: String,
         required: [true, "id is required"],
@@ -39,7 +39,7 @@ const userSchema = new mongoose_1.default.Schema({
         required: [true, "dob is required"],
     },
 }, { timestamps: true });
-userSchema.virtual("age").get(function () {
+authSchema.virtual("age").get(function () {
     const today = new Date();
     const dob = this.dob;
     let age = today.getFullYear() - dob.getFullYear();
@@ -50,7 +50,7 @@ userSchema.virtual("age").get(function () {
     return age;
 });
 // Ensure virtual fields are serialised
-userSchema.set("toJSON", { virtuals: true });
-userSchema.set("toObject", { virtuals: true });
+authSchema.set("toJSON", { virtuals: true });
+authSchema.set("toObject", { virtuals: true });
 // user model
-exports.User = mongoose_1.default.model("User", userSchema);
+exports.User = mongoose_1.default.model("User", authSchema);

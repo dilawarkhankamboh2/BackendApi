@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
-// user schema
-const userSchema = new mongoose.Schema(
+// auth schema
+const authSchema = new mongoose.Schema(
   {
     _id: {
       type: String,
@@ -44,7 +44,7 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-userSchema.virtual("age").get(function () {
+authSchema.virtual("age").get(function () {
   const today = new Date();
   const dob = this.dob;
   let age = today.getFullYear() - dob.getFullYear();
@@ -59,8 +59,8 @@ userSchema.virtual("age").get(function () {
 });
 
 // Ensure virtual fields are serialised
-userSchema.set("toJSON", { virtuals: true });
-userSchema.set("toObject", { virtuals: true });
+authSchema.set("toJSON", { virtuals: true });
+authSchema.set("toObject", { virtuals: true });
 
 // user model
-export const User = mongoose.model("User", userSchema);
+export const User = mongoose.model("User", authSchema);
